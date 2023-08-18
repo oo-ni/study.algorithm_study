@@ -6,7 +6,6 @@ end = max(height)
 
 while start <= end:
     mid = (start + end) // 2
-    print(mid)
     cnt = 0
     
     for i in height:
