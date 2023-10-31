@@ -7,7 +7,7 @@ while True:
     # 이동 가능한 경우
     if (maze[x][y] == 0):
         maze[x][y] = 9
-    elif (maze[x][y] == 2):
+    elif (maze[x][y] == 2)
         maze[x][y] = 9
         break
 
