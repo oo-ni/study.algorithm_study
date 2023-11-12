@@ -10,8 +10,10 @@ for station in stations:
 
 # find 연산
 def find_parent(parent, x):
-    if parent[x] != x:      # 부모 노드가 본인이 아닐 경우
-        parent[x] = find_parent(parent, parent[x])  # 부모 노드의 값을 넣기 위해 재귀적 수행.
+    # 부모 노드가 본인이 아닐 경우
+    if parent[x] != x:
+        # 부모 노드의 값을 넣기 위해 재귀적 수행.
+        parent[x] = find_parent(parent, parent[x])
     return parent[x]
 
 # union 연산
