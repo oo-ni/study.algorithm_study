@@ -1,1 +1,1 @@
-print('test입니다.')
+print('2024 happy new year!')
