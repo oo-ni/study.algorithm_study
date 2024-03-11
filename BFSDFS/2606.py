@@ -7,8 +7,8 @@ for i in range (m):
     a, b = map(int, input().split())
     graph[a].append(b)
     graph[b].append(a)
-visited = [0]*(n+1)
 
+visited = [0]*(n+1)
 count = -1
 
 def dfs(v):
