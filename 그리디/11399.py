@@ -1,3 +1,5 @@
+# ATM
+
 n = int(input())
 p = list(map(int, input().split()))
 temp = 0 

@@ -1,3 +1,4 @@
+# 짝수의 합
 def solution(n):
     term = 0
     
