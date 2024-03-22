@@ -1,13 +1,14 @@
 # ATM
 
-n = int(input())
-p = list(map(int, input().split()))
-temp = 0 
-result = 0
-p.sort()
+N = int(input())
+P = list(map(int, input().split()))
 
-for i in range(n):
-    temp += p[i]
+P.sort()
+temp = 0
+result = 0
+
+for i in range(N):
+    temp += P[i]
     result += temp
 
 print(result)
