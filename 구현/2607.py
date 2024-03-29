@@ -1,4 +1,7 @@
 #비슷한 단어
+import sys
+input = sys.stdin.readline
+
 n = int(input())
 word_list = [input().strip() for _ in range(n)]
 
@@ -7,7 +10,7 @@ compare = word_list[1:]
 result = 0
 
 for base in compare:
-    if abs(len(base) - len(target)) or len(set(target).difference(set(base))) > 1:      # 문자열 길이 or 구성하는 문자 차이나면 안됨.
+    if abs(len(base) - len(target)) > 1 or len(set(target).difference(set(base))) > 1:      # 문자열 길이 or 구성하는 문자 차이나면 안됨.
         continue
     for t in target:
         if t in base:
