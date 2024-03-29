@@ -8,7 +8,7 @@ for i in range(c):
 
     cnt = 0
     while True:
-        # 맨 앞의 원소가 가장 클 때
+        # 맨 앞의 원소가 가장 클 때 cnt 1 추가
         if my_list[0] >= max(my_list):
             cnt += 1
             # m번째 원소가 맞다면 스탑
@@ -19,6 +19,6 @@ for i in range(c):
                 order_list = order_list[1:]
         # 맨 앞의 원소가 가장 크지는 않은 경우
         else:
-            my_list = my_list[1:] + my_list[:1]
+            my_list = my_list[1:] + my_list[:1]             # 제일 앞[0] 원소를 제일 뒤로 보냄
             order_list = order_list[1:] + order_list[:1]
     print(cnt)
