@@ -16,7 +16,7 @@ class lt819 {
         // 단어 빈도수 계산
         for (String word : words) {
             if (!bans.contains(word)) {
-                counts.put(word, counts.getOrDefault(word, 0) +1);
+                counts.put(word, counts.getOrDefault(word, 0) + 1);
             }
         }
 

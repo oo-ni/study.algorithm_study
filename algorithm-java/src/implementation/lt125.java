@@ -4,7 +4,7 @@ class lt125 {
 
         // 인덱싱을 위한 변수
         int left = 0;
-        int right = s.length() -1;
+        int right = s.length() - 1;
 
         while (left < right) {
             // isLetterOrDigit() -> 특수문자 거르기

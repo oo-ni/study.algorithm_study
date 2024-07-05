@@ -9,17 +9,17 @@ class lt5 {
             // 홀수 길이 팰린드롬
             int len1 = expandCenter(s, i, i);
             // 짝수 길이 팰린드롬
-            int len2 = expandCenter(s, i, i +1);
+            int len2 = expandCenter(s, i, i + 1);
             // 둘 중 최대 길이 선택
             int len = Math.max(len1, len2);
             // 길이가 더 길 경우 인덱스 업데이트
             if (len > right - left) {
-                left = i - (len -1) / 2;
+                left = i - (len - 1) / 2;
                 right = i + len / 2;
             }
         }
         // 가장 긴 팰린드롬 리턴
-        return s.substring(left, right +1);
+        return s.substring(left, right + 1);
     }
 
     private int expandCenter(String s, int left, int right) {
@@ -30,6 +30,6 @@ class lt5 {
             right++;
         }
         // 확장 후 길이 반환
-        return right - left -1;
+        return right - left - 1;
     }
 }
