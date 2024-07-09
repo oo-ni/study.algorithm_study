@@ -1,4 +1,4 @@
-package implementation;
+package string;
 
 class lt344 {
     public void reverseString(char[] s) {

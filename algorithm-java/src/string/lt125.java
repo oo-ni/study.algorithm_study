@@ -1,4 +1,4 @@
-package implementation;
+package string;
 class lt125 {
     public boolean isPalindrome(String s) {
 
