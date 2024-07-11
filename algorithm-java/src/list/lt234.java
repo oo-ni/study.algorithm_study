@@ -1,4 +1,4 @@
-package linear;
+package list;
 
 import java.util.Deque;
 import java.util.LinkedList;

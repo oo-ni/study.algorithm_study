@@ -1,4 +1,4 @@
-package linear;
+package array;
 
 class lt238 {
     public int[] productExceptSelf(int[] nums) {

@@ -1,4 +1,4 @@
-package linear;
+package array;
 
 class lt42 {
     // 투포인터

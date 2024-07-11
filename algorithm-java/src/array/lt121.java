@@ -1,4 +1,4 @@
-package linear;
+package array;
 
 public class lt121 {
     public int maxProfit(int[] prices) {

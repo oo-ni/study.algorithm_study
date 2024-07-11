@@ -1,4 +1,6 @@
-package linear;
+package list;
+
+import list.ListNode;
 
 class lt206 {
     public ListNode reverseList(ListNode head) {

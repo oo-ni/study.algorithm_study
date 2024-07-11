@@ -1,4 +1,6 @@
-package linear;
+package list;
+
+import list.ListNode;
 
 class lt21 {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {

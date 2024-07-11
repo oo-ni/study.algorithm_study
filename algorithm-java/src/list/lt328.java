@@ -1,4 +1,6 @@
-package linear;
+package list;
+
+import list.ListNode;
 
 public class lt328 {
     public ListNode oddEvenList(ListNode head) {

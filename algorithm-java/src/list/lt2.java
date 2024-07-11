@@ -1,4 +1,6 @@
-package linear;
+package list;
+
+import list.ListNode;
 
 public class lt2 {
     // 각 자리 숫자를 더하고, 자릿수를 넘는 값은 다음 자리로 올림

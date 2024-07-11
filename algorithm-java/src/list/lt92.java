@@ -1,4 +1,6 @@
-package linear;
+package list;
+
+import list.ListNode;
 
 public class lt92 {
     public ListNode reverseBetween(ListNode head, int left, int right) {
