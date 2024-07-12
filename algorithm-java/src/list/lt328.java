@@ -2,7 +2,7 @@ package list;
 
 import list.ListNode;
 
-public class lt328 {
+class lt328 {
     public ListNode oddEvenList(ListNode head) {
         ListNode odd1 = null, odd2 = null;
         ListNode even1 = null, even2 = null;

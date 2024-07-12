@@ -1,6 +1,6 @@
 package array;
 
-public class lt121 {
+class lt121 {
     public int maxProfit(int[] prices) {
         // 가장 큰 값으로 최소가격 초기화
         int minPrice = Integer.MAX_VALUE;

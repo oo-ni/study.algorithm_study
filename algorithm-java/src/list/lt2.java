@@ -2,7 +2,7 @@ package list;
 
 import list.ListNode;
 
-public class lt2 {
+class lt2 {
     // 각 자리 숫자를 더하고, 자릿수를 넘는 값은 다음 자리로 올림
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         // 헤드 반환용 더미 노드

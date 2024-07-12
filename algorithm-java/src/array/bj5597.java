@@ -1,9 +1,9 @@
-package implmentation;
+package array;
 
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class bj5592 {
+public class bj5597 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         HashSet<Integer> students = new HashSet<>();
