@@ -1,4 +1,4 @@
-package linear;
+package graph;
 
 import java.util.*;
 
