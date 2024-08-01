@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 //import java.util.Scanner;
 
-public class bj10809 {
+public class Bj10809 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

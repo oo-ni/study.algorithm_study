@@ -1,6 +1,6 @@
 package array;
 
-class lt42 {
+class Lt42 {
     // 투포인터
     public int trap(int[] height) {
         int left = 0, right = height.length -1;

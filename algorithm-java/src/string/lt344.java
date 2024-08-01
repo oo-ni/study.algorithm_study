@@ -1,6 +1,6 @@
 package string;
 
-class lt344 {
+class Lt344 {
     public void reverseString(char[] s) {
         // 인덱싱을 위한 변수
         int left = 0;

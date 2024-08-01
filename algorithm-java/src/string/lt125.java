@@ -1,5 +1,5 @@
 package string;
-class lt125 {
+class Lt125 {
     public boolean isPalindrome(String s) {
 
         // 인덱싱을 위한 변수

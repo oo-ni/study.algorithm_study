@@ -2,7 +2,7 @@ package linear;
 
 import java.util.PriorityQueue;
 
-class pg42626 {
+class Pg42626 {
     public int solution(int[] scoville, int K) {
         // 우선순위 큐를 사용하여 최소 힙을 생성
         PriorityQueue<Integer> pq = new PriorityQueue<>();

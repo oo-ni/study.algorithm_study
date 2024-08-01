@@ -1,6 +1,6 @@
 package etc;
 
-class pgDevCourse1 {
+class PgDevCourse1 {
     public int[] solution(int[][] arr) {
         int[] answer = new int[arr[0].length];          // 열 길이만큼
         int start = 0, next = 0, dist = 0;              // 시작점, 이동점, 거리

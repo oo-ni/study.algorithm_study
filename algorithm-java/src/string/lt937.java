@@ -2,7 +2,7 @@ package string;
 
 import java.util.*;
 
-class lt937 {
+class Lt937 {
     public String[] reorderLogFiles(String[] logs) {
         // 문자 숫자 로그 리스트
         List<String> letterLogs = new ArrayList<>();

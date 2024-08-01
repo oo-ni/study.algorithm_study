@@ -3,7 +3,7 @@ package linear;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-class lt973 {
+class Lt973 {
     public int[][] kClosest(int[][] points, int k) {
         // Point 클래스를 저장하는 우선순위 큐로, 정렬 기준은 distance로 한다.
         PriorityQueue<Point> pq = new PriorityQueue<>(Comparator.comparingLong(a -> a.distance));

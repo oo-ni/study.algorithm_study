@@ -3,7 +3,7 @@ package linear;
 import java.util.HashMap;
 import java.util.Map;
 
-class lt3 {
+class Lt3 {
     public int lengthOfLongestSubstring(String s) {
         Map<Character, Integer> charIndexMap = new HashMap<>();
         int maxLength = 0;

@@ -1,9 +1,8 @@
 package array;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
-public class bj10807 {
+public class Bj10807 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

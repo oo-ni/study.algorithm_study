@@ -1,8 +1,6 @@
 package list;
 
-import list.ListNode;
-
-class lt328 {
+class Lt328 {
     public ListNode oddEvenList(ListNode head) {
         ListNode odd1 = null, odd2 = null;
         ListNode even1 = null, even2 = null;

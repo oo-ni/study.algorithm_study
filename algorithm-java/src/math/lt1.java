@@ -17,7 +17,7 @@ package math;
 import java.util.HashMap;
 import java.util.Map;
 
-class lt1 {
+class Lt1 {
     public int[] twoSum(int[] nums, int target) {
         // 해쉬맵 활용
         Map<Integer, Integer> numsMap = new HashMap<>();

@@ -2,7 +2,7 @@ package string;
 
 import java.util.*;
 
-class lt819 {
+class Lt819 {
     public String mostCommonWord(String paragraph, String[] banned) {
         Set<String> bans = new HashSet<>(Arrays.asList(banned));
 

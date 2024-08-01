@@ -1,8 +1,6 @@
 package list;
 
-import list.ListNode;
-
-class lt92 {
+class Lt92 {
     public ListNode reverseBetween(ListNode head, int left, int right) {
         // 헤드 반환용 더미 노드
         ListNode dummy = new ListNode(0);

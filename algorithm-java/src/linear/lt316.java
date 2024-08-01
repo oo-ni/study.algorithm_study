@@ -3,7 +3,7 @@ package linear;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-class lt316 {
+class Lt316 {
     // 중복은 제거하되, 사전식 순서로 배열해야 하므로, count와 visit를 잘 활용해서 남은 문자를 잘 파악하고 stack에 추가해야 한다.
     public static String removeDuplicateLetters(String s) {
         // 각 문자의 빈도수 계산

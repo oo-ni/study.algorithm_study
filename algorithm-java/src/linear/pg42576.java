@@ -3,7 +3,7 @@ package linear;
 import java.util.HashMap;
 import java.util.Map;
 
-class pg42576 {
+class Pg42576 {
     public String solution(String[] participant, String[] completion) {
         Map<String, Integer> participantMap = new HashMap<>();
 

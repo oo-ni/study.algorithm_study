@@ -2,7 +2,7 @@ package linear;
 
 import java.util.PriorityQueue;
 
-class lt23 {
+class Lt23 {
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0) {
             return null;

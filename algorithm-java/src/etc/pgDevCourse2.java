@@ -1,5 +1,5 @@
 package etc;
-class pgDevCourse2 {
+class PgDevCourse2 {
 
     public int solution(int k, int[] limits, int[][] sockets) {
         int n = limits.length;

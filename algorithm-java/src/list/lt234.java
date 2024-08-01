@@ -3,7 +3,7 @@ package list;
 import java.util.Deque;
 import java.util.LinkedList;
 
-class lt234 {
+class Lt234 {
     public boolean isPalindrome(ListNode head) {
         // 데크 구현체를 연결리스트로 선언
         Deque<Integer> deque = new LinkedList<>();

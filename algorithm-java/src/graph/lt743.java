@@ -2,7 +2,7 @@ package graph;
 
 import java.util.*;
 
-public class lt743 {
+class Lt743 {
     public static int networkDelayTime(int[][] times, int n, int k) {
         // 그래프 초기화
         Map<Integer, List<int[]>> graph = new HashMap<>();

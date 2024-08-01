@@ -1,6 +1,6 @@
 package string;
 
-class lt5 {
+class Lt5 {
     public String longestPalindrome(String s) {
         // 인덱싱을 위한 변수
         int left = 0, right = 0;

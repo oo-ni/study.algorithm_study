@@ -2,7 +2,7 @@ package string;
 
 import java.util.Scanner;
 
-public class bj10988 {
+public class Bj10988 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String word = sc.next();

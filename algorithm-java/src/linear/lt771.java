@@ -3,7 +3,7 @@ package linear;
 import java.util.HashMap;
 import java.util.Map;
 
-class lt771 {
+class Lt771 {
     public int numJewelsInStones(String jewels, String stones) {
         Map<Character, Boolean> hashMap = new HashMap<>();
         for (char jewel : jewels.toCharArray()) {

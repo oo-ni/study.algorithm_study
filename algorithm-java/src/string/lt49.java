@@ -2,7 +2,7 @@ package string;
 
 import java.util.*;
 
-class lt49 {
+class Lt49 {
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> ans = new HashMap<>();
 

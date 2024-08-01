@@ -1,8 +1,6 @@
 package list;
 
-import list.ListNode;
-
-class lt24 {
+class Lt24 {
     // 값 말고 노드 자체를 교환해야함!
     public ListNode swapPairs(ListNode head) {
         // 헤드 반환용 더미 노드

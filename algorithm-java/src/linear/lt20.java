@@ -3,7 +3,7 @@ package linear;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-class lt20 {
+class Lt20 {
     // 열림 괄호와 닫힘 괄호를 비교하는 로직을 잘 만들어야 함.
     public boolean isValid(String s) {
         Deque<Character> stack = new ArrayDeque<>();

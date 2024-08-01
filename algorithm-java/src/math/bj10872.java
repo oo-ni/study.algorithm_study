@@ -2,7 +2,7 @@ package math;
 
 import java.util.Scanner;
 
-public class bj10872 {
+public class Bj10872 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

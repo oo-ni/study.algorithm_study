@@ -2,7 +2,7 @@ package dynamic;
 
 import java.util.Scanner;
 
-public class sw5215 {
+public class Sw5215 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int T = sc.nextInt();

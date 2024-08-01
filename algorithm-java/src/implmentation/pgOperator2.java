@@ -2,7 +2,7 @@ package implementation;
 
 import java.util.Scanner;
 
-public class pgOperator2 {
+class PgOperator2 {
     public static void main(String[] args) {
         /*
         -------------------------------------------

@@ -1,6 +1,6 @@
 package array;
 
-class lt238 {
+class Lt238 {
     public int[] productExceptSelf(int[] nums) {
         int n = nums.length;
         int[] ans = new int[n];

@@ -3,7 +3,6 @@ package string;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 
 //// hasNextLine() -> 다음 줄에 입력값이 있는지를 체크한다.
 //public class bj11718 {
@@ -17,7 +16,7 @@ import java.util.Scanner;
 //    }
 //}
 
-public class bj11718 {
+public class Bj11718 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

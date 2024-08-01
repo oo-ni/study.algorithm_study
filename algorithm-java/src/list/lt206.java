@@ -1,8 +1,6 @@
 package list;
 
-import list.ListNode;
-
-class lt206 {
+class Lt206 {
     public ListNode reverseList(ListNode head) {
         ListNode prev = null;
         ListNode current = head;

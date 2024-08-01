@@ -1,8 +1,6 @@
 package list;
 
-import list.ListNode;
-
-class lt21 {
+class Lt21 {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         // 헤드 반환용 더미 노드
         ListNode dummy = new ListNode(-1);

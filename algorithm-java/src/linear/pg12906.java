@@ -2,7 +2,7 @@ package linear;
 
 import java.util.*;
 
-public class pg12906 {
+public class Pg12906 {
     public int[] solution(int []arr) {
         Deque<Integer> deque = new ArrayDeque<>();
 
