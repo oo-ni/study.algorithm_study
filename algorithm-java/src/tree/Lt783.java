@@ -3,7 +3,7 @@ package tree;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class Lt783 {
+class Lt783 {
     public int minDiffInBST(TreeNode root) {
         // 이전 노드의 값, 가장 작은 수로 설정
         int prev = Integer.MIN_VALUE + 100000;
