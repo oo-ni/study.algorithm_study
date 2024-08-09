@@ -1,22 +1,17 @@
 package etc;
 
-import java.util.Scanner;
+class Test {
+    public long solution(int r1, int r2) {
+        long answer = 0;
 
-public class Test {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("이름 > ");
-        String name = sc.next();
-        System.out.print("나이 > ");
-        int age = sc.nextInt();
-        System.out.print("번호 > ");
-        String phone = sc.next();sc.nextLine();
-        System.out.print("주소 > ");
-        String addr = sc.nextLine();
-
-        System.out.println("==================================");
-        System.out.println("이름\t나이\t번호\t\t주소");
-        System.out.printf("%s\t%d\t%s\t\t%s",name,age,phone,addr);
+        for (int x = -r2; x <= r2; x++) {
+            for (int y = -r2; y <= r2; y++) {
+                int points = x * x + y * y;
+                if (points >= r1 * r1 && points <= r2 * r2) {
+                    answer++;
+                }
+            }
+        }
+        return answer;
     }
 }
