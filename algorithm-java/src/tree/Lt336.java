@@ -36,7 +36,9 @@ class Lt336 {
             // 시작 지점이 종료지점보다 앞에 있으면 계속 반복
             while (start < end) {
                 // 시작 지점은 증가하고 종료 지점은 감소하면서 문자가 일치하는지 확인, 한 번이라도 틀리면 false 리턴
-                if (str.charAt(start++) != str.charAt(end--)) return false;
+                if (str.charAt(start++) != str.charAt(end--)) {
+                    return false;
+                }
             }
             // 한 번도 틀리지 않을 경우 팰린드롬이므로 true 리턴
             return true;
@@ -80,8 +82,9 @@ class Lt336 {
                     result.add(Arrays.asList(new Integer[]{index, cur.wordId}));
                 }
                 // 자식 노드가 없으면 더 이상 팰린드롬이 아니므로 지금까지의 결과를 리턴하면서 중단
-                if (cur.children[word.charAt(j) - 'a'] == null)
+                if (cur.children[word.charAt(j) - 'a'] == null) {
                     return result;
+                }
                 // 자식 노드를 현재 노드로 교체
                 cur = cur.children[word.charAt(j) - 'a'];
             }
