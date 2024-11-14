@@ -3,7 +3,7 @@ package etc;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class PgDevCourse4 {
+class PgDevCourse4 {
     // 상, 하, 좌, 우
     private final int[] dx = {-1, 1, 0, 0};
     private final int[] dy = {0, 0, -1, 1};

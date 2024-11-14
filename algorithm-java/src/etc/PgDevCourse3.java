@@ -3,7 +3,7 @@ package etc;
 import java.util.*;
 
 // k: 상담 유형의 수, n: 멘토의 수, reqs: 각 참가자의 상담요청
-public class PgDevCourse3 {
+class PgDevCourse3 {
     public int solution(int k, int n, int[][] reqs) {
         int[] mentors = new int[k];
         Arrays.fill(mentors, 1);    // 첨엔 각 유형마다 1명씩 배정 (최소 한 명은 있어야하니까)
