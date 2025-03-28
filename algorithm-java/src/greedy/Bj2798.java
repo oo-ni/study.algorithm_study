@@ -6,7 +6,6 @@ public class Bj2798 {
     static int N, M;
     static int[] cards;
     static int maxSum;
-    static int[] result = new int[3];
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -19,24 +18,27 @@ public class Bj2798 {
             cards[i] = sc.nextInt();
         }
 
-        maxSum = 0;
-        comb(0,0);
-
-        System.out.println(maxSum);
+        System.out.println(comb());
     }
 
-    static void comb(int cnt, int start) {
-        if (cnt == 3) {
-            int sum = result[0] + result[1] + result[2];
-            if (sum <= M && sum > maxSum) {
-                maxSum = sum;
-            }
-            return;
-        }
+    static int comb() {
+        maxSum = 0;
 
-        for (int i = start; i < N; i++) {
-            result[cnt] = cards[i];
-            comb(cnt + 1, i + 1);
+        for (int i = 0; i < N - 2; i++) {
+            for (int j = i + 1; j < N - 1; j++) {
+                for (int k = j + 1; k < N; k++) {
+                    int temp = cards[i] + cards[j] + cards[k];
+
+                    if (M == temp) {
+                        return temp;
+                    }
+
+                    if (maxSum < temp && temp < M) {
+                        maxSum = temp;
+                    }
+                }
+            }
         }
+        return maxSum;
     }
 }
