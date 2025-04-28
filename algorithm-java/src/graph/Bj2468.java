@@ -1,108 +1,105 @@
 package graph;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayDeque;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.Deque;
+import java.util.StringTokenizer;
 
-public class Bj2468 {
+class Bj2468 {
     static int N;
     static int[][] map;
-    static boolean[][] visit;
-    static int[] di = {0, 0, -1, 1};
-    static int[] dj = {-1, 1, 0, 0};
-    static int ans;
+    static boolean[][] visited;
+    // 위, 아래, 오른쪽, 왼쪽
+    static int[] dx = {0, 0, 1, -1};
+    static int[] dy = {-1, 1, 0, 0};
+    static int safeArea;
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int N = sc.nextInt();
-
+        N = Integer.parseInt(br.readLine());
         map = new int[N][N];
 
+        int maxHeight = 0;
         for (int i = 0; i < N; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
             for (int j = 0; j < N; j++) {
-                map[i][j] = sc.nextInt();
+                map[i][j] = Integer.parseInt(st.nextToken());
+                maxHeight = Math.max(maxHeight, map[i][j]);     // 최고 높이 갱신
             }
-        }   // end input
+        }
 
-        ans = 0;
-        while (true) {  // increase water level (물 높이 변수를 만들어서 그보다 높은 영역이 땅이라고 체크해도 됨! 나는 그냥 땅을 물에 잠긴만크 깎아버리고 남은 땅으로 갯수 체크할 예정)
-            print(map);
-            visit = new boolean[N][N];
-            int cnt = 0;    // 현재 수위에서 안전영역의 갯수
-
+        safeArea = 0;
+        // 0(비가 안옴) 부터, 최고 높이까지 빗물 채우면서 시뮬레이션 -> 물에 안잠긴 땅 찾기
+        for (int rain = 0; rain <= maxHeight; rain++) {
+            visited = new boolean[N][N];
+            int cntArea = 0;
             for (int i = 0; i < N; i++) {
                 for (int j = 0; j < N; j++) {
-                    if (map[i][j] > 0 && !visit[i][j]) { // 오 물에 안잠긴 땅이네?! 처음 방문이다!
-                        dfs(i, j);  // 이 땅 주변에 붙은 땅 탐색을 시작하자!
-//                        bfs(i, j);
-                        cnt++;
+                    // 방문한적 없고, 빗물보다 높아서 물에 안잠겼다면? -> 탐색 시작
+                    if (!visited[i][j] && map[i][j] > rain) {
+                        bfs(rain, i, j);
+                        cntArea++;
                     }
                 }
             }
-
-            ans = Math.max(ans, cnt);
-
-            boolean isGo = false;
-            for (int i = 0; i < N; i++) {
-                for (int j = 0; j < N; j++) {
-//                    map[i][j]--;    // 전체 map(땅)의 높이를 내리면서
-                    map[i][j] = map[i][j] - 1 >= 0 ? map[i][j] - 1 : 0;
-                    if (map[i][j] > 0) {
-                        isGo = true;
-                    }
-                }
-            }
-            System.out.println(cnt);
-            if (!isGo) break;   // while 탈출. 땅이 더 이상 없음.
+            // 빗물 높이별로 최대 safeArea 개수 갱신
+            safeArea = Math.max(safeArea, cntArea);
         }
-    }
 
-    public static void print(int[][] arr) {
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
-                System.out.println(arr[i][j] == 0 ? "X " : "O ");
-            }
-            System.out.println();
-        }
-        System.out.println("----------------------");
+        System.out.println(safeArea);
     }
 
     static class Point {
-        int i, j;
-        Point (int i, int j) {
-            this.i = i;
-            this.j = j;
+        int x, y;
+        Point(int x, int y) {
+            this.x = x;
+            this.y = y;
         }
     }
 
-    public static void dfs(int nowi, int nowj) {
-        visit[nowi][nowj] = true;
+//    static void dfs(int height, int x, int y) {
+//        visited[x][y] = true;
+//
+//        // 시작점(x, y)부터 4방향 탐색
+//        for (int i = 0; i < 4; i++) {
+//            int nx = x + dx[i];     // nx = nextX
+//            int ny = y + dy[i];
+//
+//            if (nx >= 0 && ny >= 0 && nx < N && ny < N) {   // 그래프 범위 내에서
+//                if (!visited[nx][ny]) {                     // 방문하지 않은 영역이고
+//                    if (map[nx][ny] > height) {             // 그 영역이 물에 잠기지 않았다면
+//                        dfs(height, nx, ny);                // 재귀적으로 탐색 수행
+//                    }
+//                }
+//            }
+//        }
+//    }
 
-        for (int d = 0; d < 4; d++) {
-            int nexti = nowi + di[d];
-            int nextj = nowj + di[d];
-            if (nexti >= 0 && nexti < N && nextj >= 0 && nextj < N && map[nexti][nextj] > 0 && !visit[nexti][nextj]) {  // 배열 내부이고, 물에 안잠긴 땅이고, 미방문이면
-                dfs(nexti, nextj);
-                // 재귀가 헷갈릴 땐, 일단 나는 기다리고 있고 여러개 행동을 하고 싶을때, 저 행동 다 하고와, 다 하고왔으면 이 행동도 하자.
-            }
-        }
-    }
+    static void bfs(int height, int x, int y) {
+        Deque<Point> queue = new ArrayDeque<>();
+        queue.add(new Point(x, y));            // 시작 좌표 큐에 추가하고 방문처리
+        visited[x][y] = true;
 
-    public static void bfs(int starti, int startj) {
-        Queue<Point> queue = new ArrayDeque<>();
-        queue.add(new Point(starti, startj));
-        visit[starti][startj] = true;
+        while (!queue.isEmpty()) {              // 연결된 안전지역 다 순회할 때까지
+            Point current = queue.poll();       // 큐에서 현재 위치 꺼내서 cx, cy 저장
+            int cx = current.x;
+            int cy = current.y;
 
-        while (!queue.isEmpty()) {
-            Point now = queue.poll();
+            // 현재 위치(cx, cy)부터 4방향 탐색
+            for (int i = 0; i < 4; i++) {
+                int nx = cx + dx[i];
+                int ny = cy + dy[i];
 
-            for (int d = 0; d < 4; d++) {
-                int nexti = now.i + di[d];
-                int nextj = now.j + di[d];
-                if (nexti >= 0 && nexti < N && nextj >= 0 && nextj < N && map[nexti][nextj] > 0 && !visit[nexti][nextj]) {  // 배열 내부이고, 물에 안잠긴 땅이고, 미방문이면
-                    queue.add(new Point(nexti, nextj));
-
+                if (nx >= 0 && ny >= 0 && nx < N && ny < N) {   // 그래프 범위 내에서
+                    if (!visited[nx][ny]) {                     // 방문하지 않은 영역이고
+                        if (map[nx][ny] > height) {             // 그 영역이 물에 잠기지 않았다면
+                            visited[nx][ny] = true;             // 방문 표시하고, 다음에 탐색할 후보로 추가
+                            queue.add(new Point(nx, ny));
+                        }
+                    }
                 }
             }
         }

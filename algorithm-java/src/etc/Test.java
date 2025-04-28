@@ -1,17 +1,14 @@
 package etc;
 
-class Test {
-    public long solution(int r1, int r2) {
-        long answer = 0;
+import java.util.Scanner;
 
-        for (int x = -r2; x <= r2; x++) {
-            for (int y = -r2; y <= r2; y++) {
-                int points = x * x + y * y;
-                if (points >= r1 * r1 && points <= r2 * r2) {
-                    answer++;
-                }
-            }
-        }
-        return answer;
+class Test {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+
+        System.out.println(x / y);
+        System.out.println((double) x / (double) y);
     }
 }
