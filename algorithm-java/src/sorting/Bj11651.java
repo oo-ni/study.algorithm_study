@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-class Bj11650 {
+class Bj11651 {
     static int N;
     static int[][] coor;
 
@@ -18,15 +18,16 @@ class Bj11650 {
         coor = new int[N][2];
         for (int i = 0; i < N; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
-            coor[i][0] = Integer.parseInt(st.nextToken());
+            coor[i][0] = Integer.parseInt(st.nextToken());      // 간선
             coor[i][1] = Integer.parseInt(st.nextToken());
         }
 
+        // y 오름차순 -> y가 같으면 x 오름차순
         Arrays.sort(coor, (a, b) -> {
-            if (a[0] == b[0]) {
-                return a[1] - b[1];
+            if (a[1] == b[1]) {
+                return a[0] - b[0];
             }
-            return a[0] - b[0];
+            return a[1] - b[1];
         });
 
         StringBuilder sb = new StringBuilder();
@@ -35,6 +36,5 @@ class Bj11650 {
         }
 
         System.out.println(sb);
-
     }
 }

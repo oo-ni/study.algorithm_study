@@ -3,64 +3,60 @@ package binary;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.Buffer;
 import java.util.StringTokenizer;
 
 // 이분 탐색
 // 가능한 랜선길이 범위에서 탐색
 class Bj1654 {
-    static int K, N;
-    static long[] cables;
-    static long answer;
-
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        K = Integer.parseInt(st.nextToken());
-        N = Integer.parseInt(st.nextToken());
+        int K = Integer.parseInt(st.nextToken());       // 가지고 있는 랜선 개수
+        int N = Integer.parseInt(st.nextToken());       // 필요한 랜선 개수
 
-        cables = new long[K];
-        long max = 0;
+        long[] cables = new long[K];                    // 랜선들
 
         for (int i = 0; i < K; i++) {
             cables[i] = Long.parseLong(br.readLine());
-            max = Math.max(max, cables[i]);
         }
 
-        // upper bound를 수행하기 위해 최대 길이 + 1로 잡고 이분 탐색을 수행
-        max++;
+        System.out.println(solution(K, N, cables));
+    }
 
-        long min = 0;
+    // 2^31 - 1 보다 작은 자연수 -> long 배열로 받기
+    public static long solution(int K, int N, long[] cables) {
+        long answer = 0;
+        long max = 0;
+
+        for (int i = 0; i < K; i++) {
+            max = Math.max(max, cables[i]);     // 가장 긴 랜선 기준으로
+        }
+
         long mid = 0;
+        long min = 1;
 
-        answer = 0;
-
-        while (min < max) {
-            // 중간 값 구하기
-            mid = (min + max) / 2;
+        while (min <= max) {
+            mid = (min + max) / 2;      // 중간값 구하기
             answer = 0;
 
-            // 중간 길이로 잘라서 몇개가 만들어지는지 구함
             for (int i = 0; i < cables.length; i++) {
-                answer += (cables[i] / mid);
+                answer += (cables[i] / mid);        // 랜선을 중간값으로 자르면 몇개가 나오지?
             }
 
-            /*
-            [upper bound 형식]
+            // answer이 N보다 작으면? 중간값을 줄여야지 -> max를 줄임
+            // answer이 N보다 크면? 중간값을 늘려야지 -> min을 늘림
 
-            mid 길이로 잘랐을 때의 개수가 만들고자 하는 랜선의 개수보자 작으면?
-            자르려고 하는 길이를 줄여야함 -> 최대 길이를 줄임
-
-            그 외에는 자르려고 하는 길이를 늘려야함 -> 최소 길이를 늘림
-             */
             if (answer < N) {
-                max = mid;
+                max = mid - 1;
             } else {
-                min = mid + 1;
+                min = mid + 1;      // min 늘려야하니까 +1씩
             }
 
         }
 
-        System.out.println(min - 1);
+        return max;
     }
+
 }
