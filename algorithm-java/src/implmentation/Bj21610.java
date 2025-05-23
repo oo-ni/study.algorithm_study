@@ -29,17 +29,9 @@ class Bj21610 {
                 move[i][j] = Integer.parseInt(st.nextToken());
             }
         }
-
-        System.out.println(solution(N, M, map, move));
     }
 
     static int[] dx = {};
     static int[] dy = {};
-
-    public static int solution(int N, int M, int[][] map, int[][] move) {
-
-    }
-
-
 
 }
